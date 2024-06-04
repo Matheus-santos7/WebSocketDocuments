@@ -6,3 +6,7 @@ textoEditor.addEventListener("keyup", () => {
     //console.log(textoEditor.value);
     socket.emit("texto_editor", textoEditor.value);
 })
+
+socket.on("message", (message) => {
+    textoEditor.value = message;
+});

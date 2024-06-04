@@ -10,6 +10,6 @@ io.on("connection", (socket) => {
 
     socket.on("texto_editor", (message) => {
         console.log(`Message received: ${message}`);
-        io.emit("message", message);
+        socket.broadcast.emit("message", message);
     });
 });
